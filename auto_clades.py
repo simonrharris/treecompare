@@ -53,14 +53,12 @@ def clades_from_tree(goldTreeFile, outfile, maxclades=100, mintaxa=3):
 	maxtaxa=int(numtaxa/2)
 	
 	nodebls=[]
-	lengths=[]
 	for node in goldTree.postorder_internal_node_iter():
 		labels=[]
 		for leaf in node.leaf_iter():
 			labels.append(leaf.taxon.label)
 		if len(labels)>mintaxa and len(labels)<maxtaxa:
 			nodebls.append([node.edge.length, labels])
-			lengths.append(node.edge.length)
 	
 	#print(np.mean(lengths), np.median(lengths), np.std(lengths))
 	median=np.median(lengths)
