@@ -18,7 +18,7 @@ def parsecommandline():
 	parser.add_option("-g", "--goldtree", action="store", dest="gold", help="Gold standard tree in newick format", default="")
 	parser.add_option("-o", "--outfile", action="store", dest="outfile", help="Output file for clades in csv format", default="")
 	parser.add_option("-f", "--force", action="store_true", dest="force", help="Force overwrite of output file", default=False)
-	parser.add_option("-n", "--maxclades", action="store", type="int", dest="maxclades", help="Maximum umber of clades to produce (if this is > median branch length then only clades up to the median will be output)", default=100)
+	parser.add_option("-n", "--maxclades", action="store", type="int", dest="maxclades", help="Maximum number of clades to produce (if this is > median branch length then only clades up to the median will be output)", default=100)
 	parser.add_option("-m", "--mintaxa", action="store", type="int", dest="mintaxa", help="Minimum number of taxa permitted in a clade", default=10)
 	return parser.parse_args()
 
